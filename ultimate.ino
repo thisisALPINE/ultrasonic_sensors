@@ -67,11 +67,29 @@ else {
 
 Serial.print( r ); Serial.println( "cm" );
 
-if (r < 50) {
+if ((r > 0) && (r < 50)) {
  
  digitalWrite(buzzer, HIGH);  
   
 }
+
+else if ((r > 51) && (r < 150)) {
+
+digitalWrite(buzzer, HIGH); 
+delay(10 *(r-50)); 
+digitalWrite(buzzer, LOW); 
+delay(10*(r-50)); 
+
+      }
+
+else if ((r > 151) && (r < 200)) {
+
+digitalWrite(buzzer, HIGH); 
+delay(1000); 
+digitalWrite(buzzer, LOW); 
+delay(1000); 
+
+      }
 
 else {
   
